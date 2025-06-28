@@ -1,0 +1,20 @@
+//variable declaration
+Name="Hardik Hadiya";
+age=19;
+date="28-06-2025";
+console.log(Name);//to print data in console
+
+
+//variable declaration with their  data types
+
+//we have three variable let,var,const
+
+var name="Hardik Hadiya";
+var name="Hadiya Hardik";//In var we can redeclare variable and also update the value of variable..
+
+let name1="Hardik Hadiya";
+//let name1="Hadiya Hardik";//In let we can not redeclare variable but we can update the value of variable.
+name1="Hadiya Hardik";//we can update the value of variable in let.
+
+const PI=3.14;//This value con't be changed or replaced.
+
