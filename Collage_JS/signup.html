@@ -31,6 +31,9 @@
             var a = JSON.stringify(data)
             localStorage.setItem("user",a)
 
+            window.location = "login.html";
+            alert("Sign Up Successful! ");
+
         }
     </script>
 </head>
@@ -43,7 +46,6 @@
         <label for="name">Name : </label>
         <input type="text" id="name" name="name" placeholder="Enter your Name">
         <br>
-
         <br>
         <input type="radio" name="gender" id="male">
         <label for="gender">Male</label>

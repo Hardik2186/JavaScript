@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <script>
+    function login(e) {
+      e.preventDefault();
+
+      const emailInput = document.getElementById("email").value;
+      const passwordInput = document.getElementById("password").value;
+
+      const storedData = JSON.parse(localStorage.getItem("user"));
+
+      if (!storedData) {
+        alert("No user found. Please sign up first.");
+        return;
+      }
+
+      if (storedData.email === emailInput && storedData.password === passwordInput) {
+        alert("Login successful! Welcome, " + storedData.name + ".");
+      } else {
+        alert("Invalid email or password.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Login Form</h1>
+  <hr><br>
+  <form>
+    <label for="email">E-mail: </label>
+    <input type="text" id="email" placeholder="Enter your email" />
+    <br><br>
+
+    <label for="password">Password: </label>
+    <input type="password" id="password" placeholder="Enter your password" />
+    <br><br>
+
+    <hr><br>
+    <button type="button" onclick="login(event)">Login</button>
+  </form>
+</body>
+</html>
