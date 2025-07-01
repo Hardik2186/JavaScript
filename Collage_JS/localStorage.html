@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to store data in local storage</title>
+    <script>
+        
+        function saveData() { 
+            var a = localStorage.setItem("name","Hardik")
+            document.getElementById("ans").innerHTML = "Data Saved"
+        }
+
+        function saveObjData() { 
+            const obj = {
+                name: "Hardik Hadiya",
+                age: 19,
+                cgpa: 8.9,
+                collage: "CSPIT"
+            }
+            var myData = JSON.stringify(obj)
+            localStorage.setItem("user",myData)
+        }
+
+        function getObjData() {
+            var a = localStorage.getItem("user")
+            var myData = JSON.parse(a)
+            document.getElementById("ans").innerHTML =myData.age
+        }
+        function getData() {
+            var a = localStorage.getItem("name")
+            document.getElementById("ans").innerHTML = "User name is "+a
+        }
+
+        function removeData() {
+            var a = localStorage.removeItem("name")
+            document.getElementById("ans").innerHTML = "Remove the user name"
+        }
+        function removeAll(){
+            var a=  localStorage.clear()
+            document.getElementById("ans").innerHTML = "Remove all the data of user"
+        }
+    </script>
+</head>
+<body>
+    <p id="ans"></p>
+    <button onclick="saveData()">Get</button>
+    <button onclick="getData()">show</button>
+    <button onclick="removeData()">remove</button>
+    <button onclick="removeAll()">remove All</button>
+    <button onclick="saveObjData()"> obj get data</button>
+    <button onclick="getObjData()"> obj show data</button>
+
+
+</body>
+</html>
