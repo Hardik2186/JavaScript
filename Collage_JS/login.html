@@ -8,17 +8,12 @@
     function login(e) {
       e.preventDefault();
 
-      const emailInput = document.getElementById("email").value;
-      const passwordInput = document.getElementById("password").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
 
       const storedData = JSON.parse(localStorage.getItem("user"));
 
-      if (!storedData) {
-        alert("No user found. Please sign up first.");
-        return;
-      }
-
-      if (storedData.email === emailInput && storedData.password === passwordInput) {
+      if (storedData.email === email && storedData.password === password) {
         alert("Login successful! Welcome, " + storedData.name + ".");
       } else {
         alert("Invalid email or password.");
