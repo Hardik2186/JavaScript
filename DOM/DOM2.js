@@ -16,7 +16,6 @@ h3.style.fontSize = "30px";
 let btn = document.createElement("button");
 btn.innerHTML = "Submit";
 
-let h3_new = document.querySelector("h3");
 
 h3.append(btn);
 // h3.prepend(btn);
@@ -24,3 +23,5 @@ h3.append(btn);
 // h3.before(btn);
 
 btn.style.margin = "20px";
+
+btn.remove();
