@@ -50,11 +50,33 @@
     <div>
         <h1>Weather Checker</h1>
         <p>Check the weather in your city!</p>
-        <form id="weatherForm">
+        <form id="weatherForm" onsubmit="getWeather(event)">
             <input type="text" id="cityInput" placeholder="Enter city name" required>
             <button type="submit">Get Weather</button>
         </form>
         <div id="weatherResult"></div>
     </div>
+    <script>
+        function getWeather(e) {
+            e.preventDefault();
+            const weather = {
+                "Surat": 25,
+                "Anand": 20,
+                "Ahmedabad": 28,
+                "Mumbai": 30,
+                "Delhi": 32,
+                "Pune": 27,
+                "Bangalore": 26,
+                "Chennai": 31,
+                "Kolkata": 29,
+                "Jaipur": 33
+            };
+            let city = document.getElementById("cityInput").value.trim();
+            city = city.charAt(0).toUpperCase() + city.slice(1).toLowerCase();
+
+            const ans = document.getElementById("weatherResult");
+            ans.innerHTML = `The weather is ${weather[city]}`;
+        }
+    </script>
 </body>
 </html>
